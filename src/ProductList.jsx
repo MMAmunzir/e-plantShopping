@@ -261,6 +261,13 @@ const handlePlantsClick = (e) => {
      }));
   };
 
+  const zerocart = (name) => {
+setAddedToCart(prev => ({
+    ...prev,
+    [name]:false,
+}))
+  }
+
     return (
         <div>
              <div className="navbar" style={styleObj}>
@@ -301,7 +308,7 @@ const handlePlantsClick = (e) => {
     ))}
         </div>
  ) :  (
-    <CartItem onContinueShopping={handleContinueShopping}/>
+    <CartItem zerocart={zerocart} onContinueShopping={handleContinueShopping}/>
 )}
     </div>
     );
