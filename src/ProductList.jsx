@@ -268,7 +268,17 @@ const handlePlantsClick = (e) => {
         </div>
         {!showCart? (
         <div className="product-grid">
-
+        {plantsArray.map((item,index) => { return(
+          item.plants.map((plant) => {    return (
+            <div key={plant.id} className='product-list'> {/* Ensure unique key for each plant */}
+                <h4 className='product-title'>{plant.name}</h4>
+                <img className='product-image' src={plant.image} alt={plant.name} />
+                <p className='product-price'>{plant.cost}</p>
+                <p>{plant.description}</p> 
+                <button className='product-button'>Add to cart</button>
+            </div>
+        );}))
+        })}
 
         </div>
  ) :  (
